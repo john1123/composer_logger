@@ -1,0 +1,11 @@
+{
+    "name": "ivank/logger",
+    "description": "сохранение информации в лог-файлах",
+    "authors": [
+        {
+            "name": "Ivan Kelembetov",
+            "email": "john-1123@narod.ru"
+        }
+    ],
+    "require": {}
+}
