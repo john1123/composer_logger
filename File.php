@@ -1,6 +1,6 @@
 <?php
 
-namespace Logger;
+namespace john1123\logger;
 
 class File {
     /** Имя файла с логами */

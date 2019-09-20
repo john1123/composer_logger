@@ -1,11 +1,19 @@
 {
     "name": "john1123/logger",
     "description": "сохранение информации в лог-файлах",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Ivan Kelembetov",
             "email": "john-1123@narod.ru"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "John1123\\Logger\\": "src/"
+        }
+    },
+    "require": {
+        "php":">=5.3"
+    }
 }
