@@ -14,7 +14,8 @@ class File {
 
     /**
      * Пишет строку в файл лога.
-     * @param $message String Сообщение для запииси
+     * @param $message String Сообщение для записи
+     * @param $addBacktrace boolean добавлять ли после строки backtrace информацию
      */
     public function log($message, $addBacktrace=false)
     {
@@ -30,7 +31,7 @@ class File {
     }
 
     /**
-     * Пишет сообщение в файл лога "как есть". Переводов строки и других символов не добавляет.
+     * Пишет сообщение в файл лога "как есть". Времени, переводов строки и других символов не добавляет.
      * @param $message String Сообщение для запииси
      */
     public function write($message)
@@ -39,7 +40,7 @@ class File {
     }
 
     /**
-     *
+     * Возвращает backtrace информацию
      * @see https://www.php.net/manual/ru/function.debug-print-backtrace.php
      */
     protected function get_debug_print_backtrace($traces_to_ignore=1)
@@ -70,7 +71,7 @@ class File {
     }
 
     /**
-     *
+     * Приводит аргументы в читаемый вид
      * @see https://www.php.net/manual/ru/function.debug-print-backtrace.php
      */
     protected function get_arg(&$arg)
@@ -86,6 +87,8 @@ class File {
             }
 
             $arg = get_class($arg) . ' Object ('.implode(',', $args).')';
+        } elseif (is_bool($arg)) {
+            $arg = $arg == true ? 'true' : 'false';
         }
     }
 }
